@@ -1,0 +1,15 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+function NavBar() {
+    return (
+        <div>
+            <Link to='/'>Home</Link>
+            <Link to='/prescriptions'>MyScripts</Link>
+            <Link to='/healthcare-info'>Healthcare News</Link>
+            <Link to='/covid-info'>Covid News</Link>
+        </div>
+    )
+}
+
+export default NavBar
