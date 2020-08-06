@@ -15,7 +15,7 @@ const msp = state => {
     return {
         userId: state.userId
     }
- }
- 
+}
+
 
 export default connect(msp)(Home);

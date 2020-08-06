@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
 import { Route, Switch } from 'react-router-dom'
+
+// Styles
+import './App.css';
+
+import Auth from "./Auth"
 import Home from './Home/Home'
 import NavBar from './NavBar/NavBar'
 import MyScripts from './MyScripts/MyScripts'
 import HealthcareNews from './HealthcareNews/HealthcareNews'
 import CovidNews from './CovidNews/CovidNews'
-import BrandName from './BrandName/BrandName'
+import BrandNames from './BrandName/BrandNames'
 
 function App() {
   return (
@@ -14,10 +18,11 @@ function App() {
       <NavBar/>
       <Switch>
         <Route exact path='/' render={(routerprops) => <Home {...routerprops}/>}/>
+        <Route exact path="/auth" render={(routerprops) => <Auth {...routerprops}/>} />
         <Route exact path='/prescriptions' render={(routerprops) => <MyScripts {...routerprops}/>}/>
         <Route exact path='/healthcare-info' render={(routerprops) => <HealthcareNews {...routerprops}/>}/>
         <Route exact path='/covid-info' render={(routerprops) => <CovidNews {...routerprops}/>}/>
-        <Route exact path='/brand-name' render={(routerprops) => <BrandName {...routerprops}/>}/>
+        <Route exact path='/brand-name' render={(routerprops) => <BrandNames {...routerprops}/>}/>
       </Switch>
       
     </div>
