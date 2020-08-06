@@ -1,5 +1,5 @@
 import React from 'react'
-import * as act from '../actionCreators/actionCreators'
+// import * as act from '../actionCreators/actionCreators'
 import { connect } from 'react-redux'
 
 function Home(props) {
