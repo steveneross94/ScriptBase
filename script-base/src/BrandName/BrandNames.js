@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row } from 'react-bootstrap'
 import BrandName from './BrandName'
 
-function BrandNames() {
+function BrandNames(props) {
 
     let [brandNames, setBrandNames] = useState([])
 
@@ -11,7 +11,7 @@ function BrandNames() {
             .then(r => r.json())
             .then(data => setBrandNames(data))
     }, [])
-
+    console.log(props);
     return (
         <div>
             <h1>Brand Name Drug Info!</h1>
