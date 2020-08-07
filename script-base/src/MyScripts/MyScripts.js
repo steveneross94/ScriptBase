@@ -23,7 +23,6 @@ function MyScripts() {
                     <BrandName brandName={brandName}/>    
                 )}
             </div>
-            <Link to='/brand-name'>Prescriptions</Link>
         </div>
     )
 }
