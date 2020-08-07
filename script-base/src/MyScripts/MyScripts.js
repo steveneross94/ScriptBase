@@ -4,7 +4,7 @@ import MyScript from './MyScript'
 
 function MyScripts() {
 
-    let [brandNames, setBrandNames] = useState([])
+    let [brandNames, setBrandNames] = useState(null)
 
     useEffect(() => {
         fetch('http://localhost:3000/api/v1/brand_names')

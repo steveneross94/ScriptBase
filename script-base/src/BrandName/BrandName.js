@@ -1,14 +1,27 @@
 import React, { useState } from 'react'
 import { Col } from 'react-bootstrap'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { addScript } from '../actionCreators/actionCreators'
 
-function BrandName({ props, myScripts, brand }) {
+function BrandName({ brand }) {
 
     let [isGeneric, setIsGeneric] = useState(false)
     let [isAlternative, setIsAlternative] = useState(false)
 
+    const dispatch = useDispatch()
+    
+    const myScript = useSelector(state => state.myScripts[brand.id])
+    const allScripts = useSelector(state => state.myScripts)
 
+    // const addScriptSafely = brand => {
+    //     if (!myScript){
+    //         dispatch(addScript(brand))
+    //     } else {
+    //         alert('script already added')
+    //     }
+    // }
+
+    console.log(myScript, allScripts, brand.id);
 
     return (
         <div>
@@ -19,7 +32,7 @@ function BrandName({ props, myScripts, brand }) {
                     <p>{brand.price}</p>
                     {brand.generic_option && <button onClick={() => setIsGeneric(!isGeneric)}>Show Generic Option</button>}
                     {brand.alternative_option && <button onClick={() => setIsAlternative(!isAlternative)}>Show Alternative Option</button>}
-                    {brand && <button onClick={(brand) => addScript(brand)}>Add to MyScripts</button>}
+                    <button disabled={myScript} onClick={() => dispatch(addScript(brand))}>Add to MyScripts</button>
                 </div>
                 {isGeneric &&
                     <div>
@@ -44,18 +57,4 @@ function BrandName({ props, myScripts, brand }) {
     )
 }
 
-// const mdp = dispatch => {
-//     return {
-//         addScript: (brandName) => dispatch(addScript(brandName))
-//     }
-// }
-
-const msp = state => {
-    return {
-        myScripts: state.myScripts
-    }
-}
-
-
-
-export default connect(msp, {addScript})(BrandName)
+export default BrandName

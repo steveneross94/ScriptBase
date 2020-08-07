@@ -1,5 +1,5 @@
-let loginUser = (user) => ({type: 'LOGIN', payload: {value: user}})
-let addScript = (e) => ({type: 'ADD_SCRIPT', payload: e.target.value})
+let loginUser = (user) => ({type: 'LOGIN', payload: {user}})
+let addScript = (script) => ({type: 'ADD_SCRIPT', payload: {script}})
 
 
 export {
