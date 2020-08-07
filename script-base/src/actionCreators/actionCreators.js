@@ -1,4 +1,4 @@
-let loginUser = (userId) => ({type: 'LOGIN', payload: {value: userId}})
+let loginUser = (user) => ({type: 'LOGIN', payload: {value: user}})
 
 
 export {

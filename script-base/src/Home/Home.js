@@ -2,6 +2,7 @@ import React, { useState /*, useEffect */} from 'react'
 // import * as act from '../actionCreators/actionCreators'
 import SignIn from '../Auth/SignIn'
 import SignUp from '../Auth/SignUp'
+import { connect } from 'react-redux'
 
 
 function Home(props) {
@@ -21,7 +22,11 @@ function Home(props) {
     )
 }
 
+const msp = state => {
+    return {
+        user: state.user 
+    }
+}
 
 
-
-export default (Home);
+export default connect(msp)(Home);
