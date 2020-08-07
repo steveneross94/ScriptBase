@@ -10,7 +10,6 @@ import NavBar from './NavBar/NavBar'
 import MyScripts from './MyScripts/MyScripts'
 import HealthcareNews from './HealthcareNews/HealthcareNews'
 import CovidNews from './CovidNews/CovidNews'
-import BrandNames from './BrandName/BrandNames'
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Route exact path='/prescriptions' render={(routerprops) => <MyScripts {...routerprops}/>}/>
         <Route exact path='/healthcare-info' render={(routerprops) => <HealthcareNews {...routerprops}/>}/>
         <Route exact path='/covid-info' render={(routerprops) => <CovidNews {...routerprops}/>}/>
-        <Route exact path='/brand-name' render={(routerprops) => <BrandNames {...routerprops}/>}/>
       </Switch>
       
     </div>

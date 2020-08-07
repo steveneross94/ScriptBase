@@ -19,9 +19,9 @@ function MyScripts() {
             </div>
             <div>
                 <h1>Prescription Library</h1>
-                {brandNames.map(brandName =>
+                {brandNames ? brandNames.map(brandName =>
                     <BrandName brandName={brandName}/>    
-                )}
+                ) : <h6>...loading</h6>}
             </div>
             <Link to='/brand-name'>Prescriptions</Link>
         </div>
