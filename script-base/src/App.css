@@ -58,3 +58,22 @@
   width: 50% 
 }
 
+.myScript.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myScript.item {
+  display: flex;
+  border: solid black;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myScript.item > button {
+  display: block;
+
+}
+

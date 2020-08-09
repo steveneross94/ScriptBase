@@ -11,17 +11,7 @@ function BrandName({ brand }) {
     const dispatch = useDispatch()
     
     const myScript = useSelector(state => state.myScripts[brand.id])
-    const allScripts = useSelector(state => state.myScripts)
-
-    // const addScriptSafely = brand => {
-    //     if (!myScript){
-    //         dispatch(addScript(brand))
-    //     } else {
-    //         alert('script already added')
-    //     }
-    // }
-
-    console.log(myScript, allScripts, brand.id);
+    // const allScripts = useSelector(state => state.myScripts)
 
     return (
         <div>

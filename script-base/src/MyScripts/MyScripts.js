@@ -21,7 +21,7 @@ function MyScripts() {
             <div className='scripts library'>
                 <h1>Prescription Library</h1>
                 {brandNames ? brandNames.map(brandName =>
-                    <BrandName brand={brandName} />
+                    <BrandName brand={brandName} key={brandName.id}/>
                 ) : <h6>...loading</h6>}
             </div>
         </div>
