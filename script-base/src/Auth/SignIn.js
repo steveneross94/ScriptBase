@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { connect } from 'react-redux'
 import { loginUser, addScript } from '../actionCreators/actionCreators'
 
 const SignIn = (props) => {
@@ -21,7 +20,7 @@ const SignIn = (props) => {
         if (user.errors) {
         alert(user.errors)
       } else {
-        loginUser(user)
+        dispatch(loginUser(user))
         fetchUserScripts(user)
         props.history.push('/prescriptions')
       }
