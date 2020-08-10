@@ -9,9 +9,23 @@ function BrandName({ brand }) {
     let [isAlternative, setIsAlternative] = useState(false)
 
     const dispatch = useDispatch()
-    
+    const user = useSelector(state => state.user)
     const myScript = useSelector(state => state.myScripts[brand.id])
-    // const allScripts = useSelector(state => state.myScripts)
+    const addToMyScripts = (brand) => {
+        if (user){
+            dispatch(addScript(brand))
+            fetch('http://localhost:3000/api/v1/prescriptions',{
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    user_id: user.id,
+                    brand_name_id: brand.id
+                })
+            })
+        } else {
+            alert('MUST BE LOGGED IN')
+        }
+    }
 
     return (
         <div>
@@ -22,7 +36,7 @@ function BrandName({ brand }) {
                     <p>{brand.price}</p>
                     {brand.generic_option && <button onClick={() => setIsGeneric(!isGeneric)}>Show Generic Option</button>}
                     {brand.alternative_option && <button onClick={() => setIsAlternative(!isAlternative)}>Show Alternative Option</button>}
-                    <button disabled={myScript} onClick={() => dispatch(addScript(brand))}>Add to MyScripts</button>
+                    <button disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</button>
                 </div>
                 {isGeneric &&
                     <div>

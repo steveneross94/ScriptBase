@@ -1,11 +1,13 @@
-import React, { useState /*, useEffect */} from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { connect } from 'react-redux'
-import * as action from '../actionCreators/actionCreators'
+import { loginUser, addScript } from '../actionCreators/actionCreators'
 
 const SignIn = (props) => {
 
   let [username, setUsername] = useState("")
   let [password, setPassword] = useState("")
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -19,13 +21,21 @@ const SignIn = (props) => {
         if (user.errors) {
         alert(user.errors)
       } else {
-        props.loginUser(user)
+        loginUser(user)
+        fetchUserScripts(user)
         props.history.push('/prescriptions')
       }
     })
   }
 
-  console.log(props);
+  const fetchUserScripts = (user) => {
+    fetch('http://localhost:3000/api/v1/users/'+`${user.id}`)
+    .then(r => r.json())
+    .then(user => {
+      user.prescriptions.forEach(script => dispatch(addScript(script.brand_name)))
+    })
+  }
+
   return (
     <div>
       <h4>Sign In!</h4>
@@ -38,10 +48,6 @@ const SignIn = (props) => {
   );
 }
 
-const mdp = dispatch => {
-  return {
-    loginUser: (user) => dispatch(action.loginUser(user))
-  }
-}
 
-export default connect(null,mdp)(SignIn);
+
+export default SignIn

@@ -8,7 +8,6 @@ const reducer = (prevState=initialState, action) => {
         case 'LOGIN':
             return {...prevState, user: action.payload.user};
         case 'ADD_SCRIPT':
-            // return {...prevState, myScripts: action.payload.script}
             return {
                 ...prevState, 
                 myScripts: {
