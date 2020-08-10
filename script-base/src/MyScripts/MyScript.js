@@ -1,18 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeScript } from '../actionCreators/actionCreators'
 
 function MyScript() {
 
     const allScripts = useSelector(state => state.myScripts)
+    const dispatch = useDispatch()
 
     return (
         <div className='myScript container'>
             {Object.keys(allScripts).map((item, i) =>
-                <div className='myScript item'>
-                    <div key={i}>
+                <div key={i} className='myScript item'>
+                    <div>
                         {allScripts[item].name} - {allScripts[item].price}
                     </div>
-                    <button onClick={() => Object.keys(allScripts).filter(script => script.id !== allScripts.id)}>Remove</button>
+                    <button onClick={() => dispatch(removeScript(allScripts[item].id))}>Remove</button>
                 </div>
             )
             }

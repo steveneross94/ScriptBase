@@ -16,6 +16,14 @@ const reducer = (prevState=initialState, action) => {
                     [action.payload.script.id]: action.payload.script
                 }
             }
+        case 'REMOVE_SCRIPT':
+            delete prevState.myScripts[action.payload.scriptId]
+            return {
+                ...prevState,
+                myScripts: {
+                    ...prevState.myScripts
+                }
+            }
         default:
             return prevState
     }
