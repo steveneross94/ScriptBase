@@ -77,3 +77,34 @@
 
 }
 
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  border: solid;
+  border-color: black;
+}
+
+.card-body {
+  width: 400px
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.news.card {
+  height: 700px;
+}
+
+.article.image {
+
+  height: 300px;
+  width: 450px
+}
+
