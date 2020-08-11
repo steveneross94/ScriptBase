@@ -108,3 +108,6 @@
   width: 450px
 }
 
+.anim-typewriter{
+  animation: typewriter 4s,
+}

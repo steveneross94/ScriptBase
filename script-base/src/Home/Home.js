@@ -1,30 +1,38 @@
-import React, { useState /*, useEffect */} from 'react'
+import React, { useState, useEffect } from 'react'
 // import * as act from '../actionCreators/actionCreators'
 import SignIn from '../Auth/SignIn'
 import SignUp from '../Auth/SignUp'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
+import { getCovidData } from '../actionCreators/actionCreators'
 
 
 function Home(props) {
 
-   let [logIn, setLogIn] = useState(false)
-   let [signUp, setSignUp] = useState(false)
+    let [logIn, setLogIn] = useState(false)
+    let [signUp, setSignUp] = useState(false)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        fetch('https://api.covid19api.com/summary')
+            .then(r => r.json())
+            .then(data => dispatch(getCovidData(data)))
+    }, [])
 
 
     console.log(props);
     return (
         <div>
             <h1>Homepage!</h1>
-            <button onClick={()=>setLogIn(!logIn)}>Login</button><button onClick={()=>setSignUp(!signUp)}>Sign Up</button>
-            {logIn && <SignIn {...props}/>}
-            {signUp && <SignUp {...props}/>}
+            <button onClick={() => setLogIn(!logIn)}>Login</button><button onClick={() => setSignUp(!signUp)}>Sign Up</button>
+            {logIn && <SignIn {...props} />}
+            {signUp && <SignUp {...props} />}
         </div>
     )
 }
 
 const msp = state => {
     return {
-        user: state.user 
+        user: state.user
     }
 }
 

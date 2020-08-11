@@ -1,6 +1,7 @@
 const initialState = {
     user: null,
-    myScripts: []
+    myScripts: [],
+    covidData: []
 }   
 
 const reducer = (prevState=initialState, action) => {
@@ -22,6 +23,10 @@ const reducer = (prevState=initialState, action) => {
                 myScripts: {
                     ...prevState.myScripts
                 }
+            }
+        case 'GET_COVID_DATA':
+            return {
+                ...prevState, covidData: action.payload.data
             }
         default:
             return prevState
