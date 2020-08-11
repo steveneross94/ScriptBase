@@ -8,7 +8,6 @@ function NavBar() {
             <Link to='/prescriptions'>MyScripts</Link>
             <Link to='/healthcare-info'>Healthcare News</Link>
             <Link to='/covid-info'>Covid News</Link>
-            {/* <Link to='/auth'>Login</Link> */}
         </div>
     )
 }

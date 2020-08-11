@@ -19,7 +19,8 @@ function BrandName({ brand }) {
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({
                     user_id: user.id,
-                    brand_name_id: brand.id
+                    brand_name_id: brand.id,
+                    price: brand.price
                 })
             })
         } else {
@@ -42,7 +43,7 @@ function BrandName({ brand }) {
                     <div>
                         {brand.generics.map(generic =>
                             <div key={generic.id}>
-                                {generic.name}
+                                {generic.name} - {generic.price}
                             </div>
                         )}
                     </div>
@@ -51,7 +52,7 @@ function BrandName({ brand }) {
                     <div>
                         {brand.alternatives.map(alternative =>
                             <div key={alternative.id}>
-                                {alternative.name}
+                                {alternative.name} - {alternative.price}
                             </div>
                         )}
                     </div>
