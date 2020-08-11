@@ -24,9 +24,9 @@ function MyScript() {
             {Object.keys(allScripts).map((item, i) =>
                 <div key={i} className='myScript item'>
                     <div>
-                        {allScripts[item].name} - {allScripts[item].price}
-                    </div>
+                        {allScripts[item].name}
                     <button onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</button>
+                    </div>
                 </div>
             )}
         </div>

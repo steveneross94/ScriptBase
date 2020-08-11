@@ -12,11 +12,11 @@ function BrandName({ brand }) {
     const user = useSelector(state => state.user)
     const myScript = useSelector(state => state.myScripts[brand.id])
     const addToMyScripts = (brand) => {
-        if (user){
+        if (user) {
             dispatch(addScript(brand))
-            fetch('http://localhost:3000/api/v1/prescriptions',{
+            fetch('http://localhost:3000/api/v1/prescriptions', {
                 method: 'POST',
-                headers: {'Content-Type':'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     user_id: user.id,
                     brand_name_id: brand.id
@@ -31,9 +31,9 @@ function BrandName({ brand }) {
         <div>
             <Col className='brand name item' key={brand.id}>
                 <div>
-                    {brand.name}
-                    <p>{brand.description}</p>
-                    <p>{brand.price}</p>
+                    <div>Prescription Name: {brand.name}</div>
+                    <div>Description: {brand.description}</div>
+                    <div>Average Cost per Prescription: ${brand.price}</div>
                     {brand.generic_option && <button onClick={() => setIsGeneric(!isGeneric)}>Show Generic Option</button>}
                     {brand.alternative_option && <button onClick={() => setIsAlternative(!isAlternative)}>Show Alternative Option</button>}
                     <button disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</button>
@@ -41,8 +41,13 @@ function BrandName({ brand }) {
                 {isGeneric &&
                     <div>
                         {brand.generics.map(generic =>
-                            <div key={generic.id}>
-                                {generic.name}
+                            <div>
+                                <div key={generic.id}>
+                                    Generic Name: {generic.name}
+                                </div>
+                                <div>
+                                    Average Generic Cost: ${generic.price}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -50,8 +55,13 @@ function BrandName({ brand }) {
                 {isAlternative &&
                     <div>
                         {brand.alternatives.map(alternative =>
-                            <div key={alternative.id}>
-                                {alternative.name}
+                            <div>
+                                <div key={alternative.id}>
+                                    Alternative Option: {alternative.name}
+                                </div>
+                                <div>
+                                    Average Alternative Cost: ${alternative.price}
+                                </div>
                             </div>
                         )}
                     </div>

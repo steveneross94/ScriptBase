@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { getCovidData } from '../actionCreators/actionCreators'
 // import Card from 'react-bootstrap/Card'
 // import Col from 'react-bootstrap/Col'
 // import Row from 'react-bootstrap/Row'
@@ -8,14 +7,7 @@ import { getCovidData } from '../actionCreators/actionCreators'
 
 function CovidNews() {
 
-    // let [covidNews, setCovidNews] = useState(null)
     let [selectCountry, setSelectCountry] = useState('Afghanistan')
-
-    // useEffect(() => {
-    //     fetch('https://api.covid19api.com/summary')
-    //         .then(r => r.json())
-    //         .then(data => setCovidNews(data))
-    // }, [])
 
     let covidNews = useSelector(state => state.covidData)
     let newCountry = covidNews.Countries.find(selected => selected.Country === selectCountry)
@@ -28,7 +20,7 @@ function CovidNews() {
         )
     }
 
-    console.log(covidNews.Countries.find(selected => selected.Country === selectCountry));
+
     return (
         <div>
             <h1>Covid News!</h1>

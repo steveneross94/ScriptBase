@@ -63,11 +63,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: solid black;
 }
 
 .myScript.item {
   display: flex;
-  border: solid black;
   align-items: center;
   flex-direction: column;
 }

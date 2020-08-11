@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import * as act from '../actionCreators/actionCreators'
 import SignIn from '../Auth/SignIn'
 import SignUp from '../Auth/SignUp'
 import { connect, useDispatch } from 'react-redux'
@@ -18,8 +17,6 @@ function Home(props) {
             .then(data => dispatch(getCovidData(data)))
     }, [])
 
-
-    console.log(props);
     return (
         <div>
             <h1>Homepage!</h1>
