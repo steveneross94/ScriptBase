@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import Chart from './Chart'
+import SelectedCountryChart from './SelectedCountryChart'
 // import Card from 'react-bootstrap/Card'
 // import Col from 'react-bootstrap/Col'
 // import Row from 'react-bootstrap/Row'
@@ -9,8 +11,11 @@ function CovidNews() {
 
     let [selectCountry, setSelectCountry] = useState('Afghanistan')
 
+    let newCountry = {}
     let covidNews = useSelector(state => state.covidData)
-    let newCountry = covidNews.Countries.find(selected => selected.Country === selectCountry)
+    if (covidNews && covidNews.Countries) {
+        newCountry = covidNews.Countries.find(selected => selected.Country === selectCountry)
+    }
 
     const getCountryList = () => {
         return (
@@ -42,12 +47,10 @@ function CovidNews() {
             <div>
                 Global Total Recovered Count: <span>{covidNews && covidNews.Global.TotalRecovered}</span>
             </div>
-            <label>Data by Country: </label>
-            <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
-                {getCountryList()}
-            </select>
+            <Chart covidData={covidNews.Global} />
             {covidNews &&
                 <div>
+                    <SelectedCountryChart selectedCountry={newCountry} />
                     <div>
                         {newCountry.CountryCode} New Confirmed Cases: {newCountry.NewConfirmed}
                     </div>
@@ -66,8 +69,11 @@ function CovidNews() {
                     <div>
                         {newCountry.CountryCode} Total Recovered: {newCountry.TotalRecovered}
                     </div>
-                </div>
-            }
+                </div>}
+            <label>Data by Country: </label>
+            <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
+                {getCountryList()}
+            </select>
         </div>
     )
 }

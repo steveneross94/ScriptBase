@@ -34,8 +34,8 @@ function BrandName({ brand }) {
                     <div>Prescription Name: {brand.name}</div>
                     <div>Description: {brand.description}</div>
                     <div>Average Cost per Prescription: ${brand.price}</div>
-                    {brand.generic_option && <button onClick={() => setIsGeneric(!isGeneric)}>Show Generic Option</button>}
-                    {brand.alternative_option && <button onClick={() => setIsAlternative(!isAlternative)}>Show Alternative Option</button>}
+                    <button disabled={!brand.generic_option} onClick={() => setIsGeneric(!isGeneric)}>Show Generic Option</button>
+                    <button disabled={!brand.alternative_option} onClick={() => setIsAlternative(!isAlternative)}>Show Alternative Option</button>
                     <button disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</button>
                 </div>
                 {isGeneric &&

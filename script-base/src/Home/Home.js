@@ -14,8 +14,13 @@ function Home(props) {
     useEffect(() => {
         fetch('https://api.covid19api.com/summary')
             .then(r => r.json())
-            .then(data => dispatch(getCovidData(data)))
+            .then(data => {
+                dispatch(getCovidData(data))
+                console.log(data)
+            }
+            )
     }, [])
+
 
     return (
         <div>
