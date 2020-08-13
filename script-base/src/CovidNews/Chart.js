@@ -22,7 +22,7 @@ function Chart({ covidData }) {
         chart()
     }, [])
 
-    console.log(covidData);
+
     return (
         <div>
             <Bar data={chartData} />

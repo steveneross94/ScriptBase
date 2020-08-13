@@ -7,6 +7,7 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import reducer from './Reducers/reducer.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 

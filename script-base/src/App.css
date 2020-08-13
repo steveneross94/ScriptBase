@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #DD7403;
+  height: 100vh
 }
 
 .App-logo {
@@ -51,7 +53,7 @@
 .scripts.container {
  display: flex;
  flex-direction: row;
- justify-content: space-between;
+ justify-content: space-evenly;
 }
 
 .scripts.library {
@@ -64,6 +66,7 @@
   justify-content: center;
   align-items: center;
   border: solid black;
+  margin-top: 43px
 }
 
 .myScript.item {
@@ -82,8 +85,6 @@
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  border: solid;
-  border-color: black;
 }
 
 .card-body {
@@ -110,4 +111,20 @@
 
 .anim-typewriter{
   animation: typewriter 4s,
+}
+
+.homepage {
+  background: #DD7403;
+}
+
+.healthcare-news {
+  background: #DD7403;
+}
+
+.covid-news {
+  background: #DD7403;
+}
+
+.navbar {
+  background: #ffffff;
 }

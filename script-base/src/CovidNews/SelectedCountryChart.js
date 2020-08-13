@@ -12,7 +12,7 @@ function SelectedCountryChart({ selectedCountry }) {
             datasets: [
                 {
                     label: 'Covid Stats',
-                    data: [selectedCountry.NewConfirmed, selectedCountry.TotalConfirmed, selectedCountry.NewDeaths, selectedCountry.TotalDeaths, selectedCountry.NewRecovered, selectedCountry.TotalRecoverd],
+                    data: [selectedCountry.NewConfirmed, selectedCountry.TotalConfirmed, selectedCountry.NewDeaths, selectedCountry.TotalDeaths, selectedCountry.NewRecovered, selectedCountry.TotalRecovered],
                     borderWidth: 4
                 }
             ]
@@ -24,7 +24,7 @@ function SelectedCountryChart({ selectedCountry }) {
             chart()
     }, [])
 
-    console.log(selectedCountry);
+
     return (
         <div>
             <Bar data={chart} />

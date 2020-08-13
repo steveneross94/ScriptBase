@@ -27,7 +27,7 @@ function CovidNews() {
 
 
     return (
-        <div>
+        <div className='covid-news'>
             <h1>Covid News!</h1>
             <div>
                 Global New Confirmed Case Count: <span>{covidNews && covidNews.Global.NewConfirmed}</span>
@@ -50,6 +50,10 @@ function CovidNews() {
             <Chart covidData={covidNews.Global} />
             {covidNews &&
                 <div>
+                    <label>Data by Country: </label>
+                    <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
+                        {getCountryList()}
+                    </select>
                     <SelectedCountryChart selectedCountry={newCountry} />
                     <div>
                         {newCountry.CountryCode} New Confirmed Cases: {newCountry.NewConfirmed}
@@ -69,11 +73,8 @@ function CovidNews() {
                     <div>
                         {newCountry.CountryCode} Total Recovered: {newCountry.TotalRecovered}
                     </div>
-                </div>}
-            <label>Data by Country: </label>
-            <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
-                {getCountryList()}
-            </select>
+                </div>
+            }
         </div>
     )
 }

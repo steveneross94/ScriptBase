@@ -17,7 +17,6 @@ function App() {
       <NavBar/>
       <Switch>
         <Route exact path='/' render={(routerprops) => <Home {...routerprops}/>}/>
-        {/* <Route exact path="/auth" render={(routerprops) => <Auth {...routerprops}/>} /> */}
         <Route exact path='/prescriptions' render={(routerprops) => <MyScripts {...routerprops}/>}/>
         <Route exact path='/healthcare-info' render={(routerprops) => <HealthcareNews {...routerprops}/>}/>
         <Route exact path='/covid-info' render={(routerprops) => <CovidNews {...routerprops}/>}/>

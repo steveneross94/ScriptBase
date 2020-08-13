@@ -17,7 +17,7 @@ function HealthcareNews() {
 
 
     return (
-        <div>
+        <div className='healthcare-news'>
             <h1>Healthcare News!</h1>
             <Container fluid>
                 {healthNews ? healthNews.map(art =>
