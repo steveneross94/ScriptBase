@@ -1,11 +1,11 @@
 {
     "Global": {
       "NewConfirmed": 100282,
-      "TotalConfirmed": 1162857,
+      "TotalConfirmed": 22028137,
       "NewDeaths": 5658,
-      "TotalDeaths": 63263,
+      "TotalDeaths": 776592,
       "NewRecovered": 15405,
-      "TotalRecovered": 230845
+      "TotalRecovered": 14769293
     },
     "Countries": [
       {
@@ -2821,11 +2821,11 @@
         "CountryCode": "US",
         "Slug": "united-states",
         "NewConfirmed": 32129,
-        "TotalConfirmed": 275582,
+        "TotalConfirmed": 5609068,
         "NewDeaths": 1161,
-        "TotalDeaths": 7087,
+        "TotalDeaths": 73618,
         "NewRecovered": 0,
-        "TotalRecovered": 0,
+        "TotalRecovered": 2966060,
         "Date": "2020-04-05T06:37:00Z"
       },
       {

@@ -19,7 +19,7 @@ function Chart({ covidData }) {
                         "rgba(0, 0, 0)",
                         "rgba(0, 0, 0)",
                         "rgba(67, 6, 131)",
-                        "rgba(252, 233, 9)"
+                        "rgba(42, 137, 6)"
                     ]
                 }
             ]

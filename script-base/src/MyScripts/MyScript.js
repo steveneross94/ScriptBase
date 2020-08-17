@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeScript } from '../actionCreators/actionCreators'
+import { Button } from 'react-bootstrap'
 
 function MyScript() {
 
@@ -30,7 +31,7 @@ function MyScript() {
                     <div key={i} className='myScript item'>
                         <div>
                             {allScripts[item].name} - Price: {allScripts[item].price}
-                            <button onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</button>
+                            <Button variant='dark' size='sm' onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</Button>
                         </div>
                     </div>
                 )}

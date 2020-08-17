@@ -55,6 +55,7 @@
 
 .brand.name.item {
   border: solid black;
+  border-radius: 15px;
 }
 
 .scripts.container {
@@ -66,6 +67,7 @@
 
 .scripts.library {
   width: 50%;
+  margin: 10px
 }
 
 .allScripts {
@@ -80,7 +82,9 @@
   justify-content: center;
   align-items: center;
   border: solid black;
-  margin-top: 46px
+  margin-top: 46px;
+  margin-right: 20px;
+  border-radius: 15px;
 }
 
 .myScript.item {
