@@ -18,12 +18,13 @@ function HealthcareNews() {
 
     return (
         <div className='healthcare-news'>
-            <h1>Healthcare News!</h1>
+            <h3>The Latest in Healthcare</h3>
             <Container fluid>
                 {healthNews ? healthNews.map(art =>
                     <Row>
                         <Col >
-                            <Card className='news'>
+
+                            <Card text='dark' bg='light' className='news'>
                                 <Card.Img className='article image' src={art.urlToImage} />
                                 <Card.Body>
                                     <Card.Link href={art.url}><h2>{art.title}</h2></Card.Link>

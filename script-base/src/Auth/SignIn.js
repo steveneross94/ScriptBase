@@ -39,7 +39,7 @@ const SignIn = (props) => {
   
   return (
     <div className='sign-in'>
-      <div>Sign In</div>
+      <div>Welcome Back</div>
       <Form className='login-form' onSubmit={(e) => handleSubmit(e)}>
         <Form.Control name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/><br></br>
         <Form.Control type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/><br></br>

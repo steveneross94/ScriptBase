@@ -21,16 +21,21 @@ function MyScript() {
 
     let myScriptsPrices = Object.keys(allScripts).map(item => (parseInt(allScripts[item].price)))
 
+  
     return (
-        <div className='myScript container'>
-            {Object.keys(allScripts).map((item, i) =>
-                <div key={i} className='myScript item'>
-                    <div>
-                        {allScripts[item].name} - Price: {allScripts[item].price}
-                        <button onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</button>
+        <div>
+            <div className='myScript container'>
+                <div>My Current Prescriptions</div>
+                {Object.keys(allScripts).map((item, i) =>
+                    <div key={i} className='myScript item'>
+                        <div>
+                            {allScripts[item].name} - Price: {allScripts[item].price}
+                            <button onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</button>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+                {Object.keys(allScripts).length > 0 ? null : 'You Can Keep Track of Your Prescriptions Here'}
+            </div>
             {myScriptsPrices &&
                 <div>
                     Total Monthly Prescription Cost Without Insurance: {myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0) === 0 ? null : myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0)}

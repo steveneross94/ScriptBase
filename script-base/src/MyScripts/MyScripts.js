@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import BrandName from '../BrandName/BrandName'
 import MyScript from './MyScript'
-import { Spinner } from 'react-bootstrap'
+import { Spinner, Form } from 'react-bootstrap'
 
 function MyScripts() {
 
@@ -24,13 +24,14 @@ function MyScripts() {
             </div>
             <div className='scripts library'>
                 <h1>Prescription Library</h1>
-                <label>Search by Name:</label>
-                <input placeholder='search scripts' value={search} onChange={(e) => setSearch(e.target.value)} />
+                <Form>
+                    <Form.Control placeholder='Search Prescriptions By Name' value={search} onChange={(e) => setSearch(e.target.value)} />
+                </Form>
                 <div className='allScripts'>
                     {searchableBrandNames ? searchableBrandNames.map(brandName =>
-                        <BrandName brand={brandName} key={brandName.id} />) 
-                    : 
-                    <Spinner animation="border" role="status">
+                        <BrandName brand={brandName} key={brandName.id} />)
+                        :
+                        <Spinner animation="border" role="status">
                             <span className="sr-only">Loading...</span>
                         </Spinner>}
 

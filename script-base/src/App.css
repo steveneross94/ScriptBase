@@ -1,6 +1,10 @@
 .App {
   text-align: center;
-  height: 100vh
+  height: 100vh;
+  /* background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
+  background: #C9CCD3;
+  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: lighten;  
 }
 
 .App-logo {
@@ -13,6 +17,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -42,7 +48,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  width: 25%;
+  background: #C9CCD3;
+  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: lighten; 
 }
 
 .brand.name.item {
@@ -52,8 +60,8 @@
 .scripts.container {
  display: flex;
  flex-direction: row;
- justify-content: space-evenly;
- height: 100vh
+ height: 100vh;
+ align-content: space-between;
 }
 
 .scripts.library {
@@ -62,7 +70,8 @@
 
 .allScripts {
   overflow: scroll;
-  height: 100vh
+  height: 100vh;
+  
 }
 
 .myScript.container {
@@ -71,7 +80,7 @@
   justify-content: center;
   align-items: center;
   border: solid black;
-  margin-top: 43px
+  margin-top: 46px
 }
 
 .myScript.item {
@@ -102,6 +111,9 @@
   justify-content: center;
   justify-content: space-evenly;
   padding: 10px;
+  background: #C9CCD3;
+  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: lighten; 
 }
 
 .news.card {
@@ -147,4 +159,68 @@
   margin: 20px 300px 20px;
   border: solid #343a40;
   border-radius: 15px;
+}
+
+.healthcare-news > h3 {
+  margin-top: 25px;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.scripts.library > h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'IBM Plex Serif', serif; 
+}
+
+.covid-news > h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'IBM Plex Serif', serif; 
+}
+
+#root {
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'IBM Plex Serif', serif; 
+}
+
+.covid-news {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-self: center;
+  border: solid;
+  border-radius: 15px;
+}
+
+
+
+.country-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-self: center;
+  justify-content: center;
+  border: solid;
+  border-radius: 15px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+
+.country-search {
+  margin-top: 5px
+}
+
+.global-stats {
+  align-self: center;
+  padding: 10px
+}
+
+.country-data {
+  align-self: center;
+  padding: 10px
 }

@@ -28,53 +28,67 @@ function CovidNews() {
 
     return (
         <div className='covid-news'>
-            <h1>Covid News!</h1>
-            <div>
-                Global New Confirmed Case Count: <span>{covidNews && covidNews.Global.NewConfirmed}</span>
-            </div>
-            <div>
-                Global Total Confirmed Case Count: <span>{covidNews && covidNews.Global.TotalConfirmed}</span>
-            </div>
-            <div>
-                Global New Death Count: <span>{covidNews && covidNews.Global.NewDeaths}</span>
-            </div>
-            <div>
-                Global Total Death Count: <span>{covidNews && covidNews.Global.TotalDeaths}</span>
-            </div>
-            <div>
-                Global New Recovered Count: <span>{covidNews && covidNews.Global.NewRecovered}</span>
-            </div>
-            <div>
-                Global Total Recovered Count: <span>{covidNews && covidNews.Global.TotalRecovered}</span>
-            </div>
-            <Chart covidData={covidNews.Global} />
-            {covidNews &&
-                <div>
-                    <label>Data by Country: </label>
-                    <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
-                        {getCountryList()}
-                    </select>
-                    <SelectedCountryChart selectedCountry={newCountry} />
+            <h1>Current Covid Statistics - Global & By Country</h1>
+            <div className='global-container'>
+                <div className='global-stats'>
                     <div>
-                        {newCountry.CountryCode} New Confirmed Cases: {newCountry.NewConfirmed}
+                        Global New Confirmed Case Count: <span>{covidNews && covidNews.Global.NewConfirmed}</span>
                     </div>
                     <div>
-                        {newCountry.CountryCode} Total Confirmed Cases: {newCountry.TotalConfirmed}
+                        Global Total Confirmed Case Count: <span>{covidNews && covidNews.Global.TotalConfirmed}</span>
                     </div>
                     <div>
-                        {newCountry.CountryCode} New Deaths: {newCountry.NewDeaths}
+                        Global New Death Count: <span>{covidNews && covidNews.Global.NewDeaths}</span>
                     </div>
                     <div>
-                        {newCountry.CountryCode} Total Deaths: {newCountry.TotalDeaths}
+                        Global Total Death Count: <span>{covidNews && covidNews.Global.TotalDeaths}</span>
                     </div>
                     <div>
-                        {newCountry.CountryCode} New Recovered: {newCountry.NewRecovered}
+                        Global New Recovered Count: <span>{covidNews && covidNews.Global.NewRecovered}</span>
                     </div>
                     <div>
-                        {newCountry.CountryCode} Total Recovered: {newCountry.TotalRecovered}
+                        Global Total Recovered Count: <span>{covidNews && covidNews.Global.TotalRecovered}</span>
                     </div>
                 </div>
-            }
+                <div className='global-chart'>
+                    <Chart covidData={covidNews.Global} />
+                </div>
+            </div>
+            <div className='country-main-container'>
+                        <div className='country-search'>
+                            <label>Data by Country: </label>
+                            <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
+                                {getCountryList()}
+                            </select>
+                        </div>
+                {covidNews &&
+                    <div className='country-container'>
+                        <div className='country-chart'>
+                            <SelectedCountryChart selectedCountry={newCountry} />
+                        </div>
+                        <div className='country-data'>
+                            <div>
+                                {newCountry.CountryCode} New Confirmed Cases: {newCountry.NewConfirmed}
+                            </div>
+                            <div>
+                                {newCountry.CountryCode} Total Confirmed Cases: {newCountry.TotalConfirmed}
+                            </div>
+                            <div>
+                                {newCountry.CountryCode} New Deaths: {newCountry.NewDeaths}
+                            </div>
+                            <div>
+                                {newCountry.CountryCode} Total Deaths: {newCountry.TotalDeaths}
+                            </div>
+                            <div>
+                                {newCountry.CountryCode} New Recovered: {newCountry.NewRecovered}
+                            </div>
+                            <div>
+                                {newCountry.CountryCode} Total Recovered: {newCountry.TotalRecovered}
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     )
 }

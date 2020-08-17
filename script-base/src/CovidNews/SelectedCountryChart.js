@@ -27,7 +27,7 @@ function SelectedCountryChart({ selectedCountry }) {
 
     return (
         <div>
-            <Bar data={chart} />
+            <Bar data={chart} height={'400%'} width={'600%'} options={{responsive: true, maintainAspectRatio: false}} />
         </div>
     )
 }

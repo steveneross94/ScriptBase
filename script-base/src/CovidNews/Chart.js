@@ -25,7 +25,7 @@ function Chart({ covidData }) {
 
     return (
         <div>
-            <Bar data={chartData} options={{responsive: true}}/>
+            <Bar data={chartData} height={'400%'} width={'600%'} options={{responsive: true, maintainAspectRatio: false}}/>
         </div>
     )
 }

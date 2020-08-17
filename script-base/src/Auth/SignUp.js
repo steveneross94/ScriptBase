@@ -33,7 +33,7 @@ const SignUp = (props) => {
 
   return (
     <div className='sign-up'>
-      <div>Sign Up!</div>
+      <div>Create an Account</div>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Control name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
         <Form.Control type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
