@@ -25,7 +25,7 @@ function Chart({ covidData }) {
 
     return (
         <div>
-            <Bar data={chartData} />
+            <Bar data={chartData} options={{responsive: true}}/>
         </div>
     )
 }

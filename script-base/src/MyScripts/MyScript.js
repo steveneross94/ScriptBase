@@ -33,7 +33,7 @@ function MyScript() {
             )}
             {myScriptsPrices &&
                 <div>
-                    Total Monthly Prescription Cost Without Insurance: {myScriptsPrices.reduce(function(a, b){return(a + b)},0) === 0 ? null : myScriptsPrices.reduce(function(a, b){return(a + b)},0)}
+                    Total Monthly Prescription Cost Without Insurance: {myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0) === 0 ? null : myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0)}
                 </div>}
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginUser, addScript } from '../actionCreators/actionCreators'
+import { Form, Button } from 'react-bootstrap'
 
 const SignIn = (props) => {
 
@@ -37,13 +38,13 @@ const SignIn = (props) => {
 
   
   return (
-    <div>
-      <h4>Sign In!</h4>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
-        <input type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
-        <button typ='submit'>Submit</button>
-      </form>
+    <div className='sign-in'>
+      <div>Sign In</div>
+      <Form className='login-form' onSubmit={(e) => handleSubmit(e)}>
+        <Form.Control name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/><br></br>
+        <Form.Control type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}/><br></br>
+        <Button variant='dark' type='submit'>Sign In</Button>
+      </Form>
     </div>
   );
 }

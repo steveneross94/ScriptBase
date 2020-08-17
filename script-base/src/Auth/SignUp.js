@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import * as action from '../actionCreators/actionCreators'
+import { Form, Button } from 'react-bootstrap'
 
 const SignUp = (props) => {
 
@@ -31,14 +32,14 @@ const SignUp = (props) => {
   }
 
   return (
-    <div>
-      <h4>Sign Up!</h4>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-        <input type='password' name='confirmPassword' placeholder='confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-        <button type='submit'>Submit</button>
-      </form>
+    <div className='sign-up'>
+      <div>Sign Up!</div>
+      <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Control name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
+        <Form.Control type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
+        <Form.Control type='password' name='confirmPassword' placeholder='confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /><br></br>
+        <Button variant='dark' type='submit'>Sign Up</Button>
+      </Form>
     </div>
   );
 }

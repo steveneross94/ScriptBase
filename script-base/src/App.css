@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background: #DD7403;
   height: 100vh
 }
 
@@ -54,10 +53,16 @@
  display: flex;
  flex-direction: row;
  justify-content: space-evenly;
+ height: 100vh
 }
 
 .scripts.library {
-  width: 50% 
+  width: 50%;
+}
+
+.allScripts {
+  overflow: scroll;
+  height: 100vh
 }
 
 .myScript.container {
@@ -113,18 +118,33 @@
   animation: typewriter 4s,
 }
 
+.auth-block {
+  display: flex;
+  justify-content: center;
+}
+
 .homepage {
-  background: #DD7403;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.healthcare-news {
-  background: #DD7403;
+.sign-in {
+  margin: 10px
 }
 
-.covid-news {
-  background: #DD7403;
+.sign-up {
+  margin: 10px
 }
 
-.navbar {
-  background: #ffffff;
+.auth-container {
+  margin: 50px 300px 20px;
+  border: solid #343a40;
+  border-radius: 15px;
+}
+
+.terms {
+  margin: 20px 300px 20px;
+  border: solid #343a40;
+  border-radius: 15px;
 }
