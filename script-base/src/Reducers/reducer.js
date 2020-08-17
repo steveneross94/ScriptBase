@@ -1,7 +1,8 @@
 const initialState = {
     user: null,
     myScripts: [],
-    covidData: []
+    covidData: [],
+    countryData: []
 }   
 
 const reducer = (prevState=initialState, action) => {
@@ -24,9 +25,13 @@ const reducer = (prevState=initialState, action) => {
                     ...prevState.myScripts
                 }
             }
-        case 'GET_COVID_DATA':
+        case 'GET_GLOBAL_DATA':
             return {
                 ...prevState, covidData: action.payload.data
+            }
+        case 'GET_COUNTRY_DATA':
+            return {
+                ...prevState, countryData: action.payload.data
             }
         default:
             return prevState

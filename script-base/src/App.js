@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 // Styles
 import './App.css';
 
-import { getCovidData } from './actionCreators/actionCreators'
+import { getCovidData, getCountryData } from './actionCreators/actionCreators'
 import Home from './Home/Home'
 import NavBar from './NavBar/NavBar'
 import MyScripts from './MyScripts/MyScripts'
@@ -17,11 +17,18 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-      fetch('https://api.covid19api.com/summary')
+      fetch('http://localhost:3002/global')
           .then(r => r.json())
           .then(data =>
               dispatch(getCovidData(data)))
   }, [])
+
+  useEffect(() => {
+      fetch('http://localhost:3002/countries')
+        .then(r => r.json())
+        .then(data =>
+            dispatch(getCountryData(data)))
+}, [])
 
   return (
     <div className="App">

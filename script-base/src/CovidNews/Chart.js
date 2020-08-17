@@ -12,7 +12,15 @@ function Chart({ covidData }) {
                 {
                     label: 'Covid Stats',
                     data: [covidData.NewConfirmed, covidData.TotalConfirmed, covidData.NewDeaths, covidData.TotalDeaths, covidData.NewRecovered, covidData.TotalRecovered],
-                    borderWidth: 4
+                    borderWidth: 4,
+                    backgroundColor: [
+                        "rgba(223, 122, 8)",
+                        "rgba(223, 8, 8)",
+                        "rgba(0, 0, 0)",
+                        "rgba(0, 0, 0)",
+                        "rgba(67, 6, 131)",
+                        "rgba(252, 233, 9)"
+                    ]
                 }
             ]
         })

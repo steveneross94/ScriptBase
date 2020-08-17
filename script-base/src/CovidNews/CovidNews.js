@@ -13,13 +13,14 @@ function CovidNews() {
 
     let newCountry = {}
     let covidNews = useSelector(state => state.covidData)
-    if (covidNews && covidNews.Countries) {
-        newCountry = covidNews.Countries.find(selected => selected.Country === selectCountry)
+    let countryData = useSelector(state => state.countryData)
+    if (covidNews) {
+        newCountry = countryData.find(selected => selected.Country === selectCountry)
     }
 
     const getCountryList = () => {
         return (
-            covidNews.Countries.map((country, index) => {
+            countryData.map((country, index) => {
                 return <option key={index} value={country.Country}>{country.Country}</option>
             })
         )
@@ -32,26 +33,26 @@ function CovidNews() {
             <div className='global-container'>
                 <div className='global-stats'>
                     <div>
-                        Global New Confirmed Case Count: <span>{covidNews && covidNews.Global.NewConfirmed}</span>
+                        Global New Confirmed Case Count: <span>{covidNews && covidNews.NewConfirmed}</span>
                     </div>
                     <div>
-                        Global Total Confirmed Case Count: <span>{covidNews && covidNews.Global.TotalConfirmed}</span>
+                        Global Total Confirmed Case Count: <span>{covidNews && covidNews.TotalConfirmed}</span>
                     </div>
                     <div>
-                        Global New Death Count: <span>{covidNews && covidNews.Global.NewDeaths}</span>
+                        Global New Death Count: <span>{covidNews && covidNews.NewDeaths}</span>
                     </div>
                     <div>
-                        Global Total Death Count: <span>{covidNews && covidNews.Global.TotalDeaths}</span>
+                        Global Total Death Count: <span>{covidNews && covidNews.TotalDeaths}</span>
                     </div>
                     <div>
-                        Global New Recovered Count: <span>{covidNews && covidNews.Global.NewRecovered}</span>
+                        Global New Recovered Count: <span>{covidNews && covidNews.NewRecovered}</span>
                     </div>
                     <div>
-                        Global Total Recovered Count: <span>{covidNews && covidNews.Global.TotalRecovered}</span>
+                        Global Total Recovered Count: <span>{covidNews && covidNews.TotalRecovered}</span>
                     </div>
                 </div>
                 <div className='global-chart'>
-                    <Chart covidData={covidNews.Global} />
+                    <Chart covidData={covidNews} />
                 </div>
             </div>
             <div className='country-main-container'>
