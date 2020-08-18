@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginUser, addScript } from '../actionCreators/actionCreators'
+import { loginUser, addScript, clearScripts } from '../actionCreators/actionCreators'
 import { Form, Button } from 'react-bootstrap'
 
 const SignIn = (props) => {
@@ -22,6 +22,7 @@ const SignIn = (props) => {
         alert(user.errors)
       } else {
         dispatch(loginUser(user))
+        dispatch(clearScripts())
         fetchUserScripts(user)
         props.history.push('/prescriptions')
       }

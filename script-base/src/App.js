@@ -12,6 +12,7 @@ import MyScripts from './MyScripts/MyScripts'
 import HealthcareNews from './HealthcareNews/HealthcareNews'
 import CovidNews from './CovidNews/CovidNews'
 
+
 function App() {
 
   const dispatch = useDispatch()
@@ -30,6 +31,15 @@ function App() {
             dispatch(getCountryData(data)))
 }, [])
 
+
+// API prone to connection loss or SSL errors, moved to DB.json to prevent issue for presentation.
+// useEffect(() => {
+//   fetch('https://api.covid19api.com/summary')
+//     .then(r => r.json())
+//     .then(data =>
+//         dispatch(getCountryData(data)))
+// }, [])
+
   return (
     <div className="App">
       <NavBar/>
@@ -39,7 +49,7 @@ function App() {
         <Route exact path='/healthcare-info' render={(routerprops) => <HealthcareNews {...routerprops}/>}/>
         <Route exact path='/covid-info' render={(routerprops) => <CovidNews {...routerprops}/>}/>
       </Switch>
-      
+
     </div>
   );
 }

@@ -8,7 +8,6 @@ function Term({ terms }) {
     let term
     if (terms) {
         term = terms[Math.floor(Math.random() * terms.length)]
-        console.log(term);
     }
 
 
@@ -18,10 +17,10 @@ function Term({ terms }) {
             <Button variant='dark' onClick={() => setShowTerm(!showTerm)}>{showTerm ? 'Enough Learning, Thanks' : 'Learn Something'}</Button>
             {showTerm && term &&
                 <div className='terms'>
-                    <div>
+                    <div className='terms-name'>
                         <strong>{term.name}</strong>
                     </div>
-                    <div>
+                    <div className='terms-desc'>
                         {term.description}
                     </div>
                 </div>

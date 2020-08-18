@@ -26,9 +26,7 @@ function Home(props) {
                     <SignUp {...props} />
                 </div>
             </div>
-            <div>
                 <Term terms={healthCareTerms}/>
-            </div>
         </div>
     )
 }

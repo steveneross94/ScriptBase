@@ -33,6 +33,10 @@ const reducer = (prevState=initialState, action) => {
             return {
                 ...prevState, countryData: action.payload.data
             }
+        case 'CLEAR_SCRIPTS':
+            return {
+                myScripts: null
+            }
         default:
             return prevState
     }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import { addScript } from '../actionCreators/actionCreators'
-import { Button } from 'react-bootstrap'
+import { Button, ButtonGroup} from 'react-bootstrap'
 
 function BrandName({ brand }) {
 
@@ -35,9 +35,11 @@ function BrandName({ brand }) {
                     <div>Prescription Name: {brand.name}</div>
                     <div>Description: {brand.description}</div>
                     <div>Average Cost per Prescription: ${brand.price}</div>
-                    <Button variant='dark' disabled={!brand.generic_option} onClick={() => setIsGeneric(!isGeneric)}>Generic Option</Button>
-                    <Button variant='dark' disabled={!brand.alternative_option} onClick={() => setIsAlternative(!isAlternative)}>Alternative Option</Button>
-                    <Button variant='dark' disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</Button>
+                    <ButtonGroup>
+                        <Button variant='dark' disabled={!brand.generic_option} onClick={() => setIsGeneric(!isGeneric)}>Generic Option</Button>
+                        <Button variant='dark' disabled={!brand.alternative_option} onClick={() => setIsAlternative(!isAlternative)}>Alternative Option</Button>
+                        <Button variant='dark' disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</Button>
+                    </ButtonGroup>
                 </div>
                 {isGeneric &&
                     <div>

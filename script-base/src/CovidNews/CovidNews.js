@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Chart from './Chart'
 import SelectedCountryChart from './SelectedCountryChart'
+import { Form } from 'react-bootstrap'
 // import Card from 'react-bootstrap/Card'
 // import Col from 'react-bootstrap/Col'
 // import Row from 'react-bootstrap/Row'
@@ -55,13 +56,13 @@ function CovidNews() {
                     <Chart covidData={covidNews} />
                 </div>
             </div>
-            <div className='country-main-container'>
-                        <div className='country-search'>
-                            <label>Data by Country: </label>
-                            <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
-                                {getCountryList()}
-                            </select>
-                        </div>
+            <div className='country-search'>
+                <label>Data by Country: </label>
+                <select name='country-data' value={selectCountry} onChange={(e) => setSelectCountry(e.target.value)}>
+                    {getCountryList()}
+                </select>
+            </div>
+            <div>
                 {covidNews &&
                     <div className='country-container'>
                         <div className='country-chart'>

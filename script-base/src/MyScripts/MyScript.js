@@ -26,11 +26,11 @@ function MyScript() {
     return (
         <div>
             <div className='myScript container'>
-                <div>My Current Prescriptions</div>
+                <strong>My Current Prescriptions</strong>
                 {Object.keys(allScripts).map((item, i) =>
                     <div key={i} className='myScript item'>
-                        <div>
-                            {allScripts[item].name} - Price: {allScripts[item].price}
+                        <div className='userScript'>
+                            {allScripts[item].name} - Price: ${allScripts[item].price}
                             <Button variant='dark' size='sm' onClick={() => removeScriptFromDb(allScripts[item].id)}>Remove</Button>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ function MyScript() {
             </div>
             {myScriptsPrices &&
                 <div>
-                    Total Monthly Prescription Cost Without Insurance: {myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0) === 0 ? null : myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0)}
+                    Total Monthly Prescription Cost Without Insurance: $<strong>{myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0) === 0 ? null : myScriptsPrices.reduce(function (a, b) { return (a + b) }, 0)}</strong>
                 </div>}
         </div>
     )

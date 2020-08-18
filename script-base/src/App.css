@@ -1,10 +1,17 @@
+body {
+  /* background: #C9CCD3;
+  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: lighten; */
+}
+
 .App {
   text-align: center;
-  height: 100vh;
+  /* height: 100%; */
   /* background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
   background: #C9CCD3;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
   background-blend-mode: lighten;  
+  font-size: calc(1vh + .5em)
 }
 
 .App-logo {
@@ -48,32 +55,47 @@
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  background: #C9CCD3;
+  /* background: #C9CCD3;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
-  background-blend-mode: lighten; 
+  background-blend-mode: lighten;  */
 }
 
 .brand.name.item {
   border: solid black;
-  border-radius: 15px;
+  border-radius: .5em;
+  margin-bottom: .5em;
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen; 
+}
+.btn-group{
+  margin: .5em
+}
+
+.scripts-page {
+  height: 100%
 }
 
 .scripts.container {
  display: flex;
  flex-direction: row;
- height: 100vh;
+ /* height: 100vh; */
  align-content: space-between;
+
+}
+
+.search-bar{
+  margin-bottom: 1em
 }
 
 .scripts.library {
   width: 50%;
-  margin: 10px
+  margin: 10px;
 }
 
 .allScripts {
   overflow: scroll;
-  height: 75.6vh
-  
+  height: 75.6vh;
+  margin-bottom: 100px
 }
 
 .myScript.container {
@@ -82,15 +104,18 @@
   justify-content: center;
   align-items: center;
   border: solid black;
-  margin-top: 46px;
+  margin-top: 4.29em;
   margin-right: 20px;
-  border-radius: 15px;
+  border-radius: .5em;
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen; 
 }
 
 .myScript.item {
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .myScript.item > button {
@@ -115,9 +140,9 @@
   justify-content: center;
   justify-content: space-evenly;
   padding: 10px;
-  background: #C9CCD3;
+  /* background: #C9CCD3;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
-  background-blend-mode: lighten; 
+  background-blend-mode: lighten;  */
 }
 
 .news.card {
@@ -130,43 +155,63 @@
   width: 450px
 }
 
-.anim-typewriter{
-  animation: typewriter 4s,
-}
-
 .auth-block {
   display: flex;
   justify-content: center;
 }
 
+
 .homepage {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+  margin: auto;
+  margin-top: 3em;
+  height: 100vh;
 }
 
 .sign-in {
-  margin: 10px
+  margin: 10px;
+  font-weight: bold;
 }
 
 .sign-up {
-  margin: 10px
+  margin: 10px;
+  font-weight: bold;
 }
 
-.auth-container {
-  margin: 50px 300px 20px;
+.auth-container{
+  margin: 0em 19em 3em;
   border: solid #343a40;
-  border-radius: 15px;
+  border-radius: .5em;
+  box-shadow: .3em .3em .5em #343a40;
+  
+}
+
+.auth-block {
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+ background-blend-mode: screen;
+ border-radius: .3em;
 }
 
 .terms {
-  margin: 20px 300px 20px;
+  margin: 1em 19em 3em;;
   border: solid #343a40;
-  border-radius: 15px;
+  border-radius: .5em;
+  box-shadow: .3em .3em .5em #343a40;
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen; 
+}
+
+.terms-name {
+  margin: 0 .2em 0 .2em
+}
+
+.terms-desc {
+  margin: 0 .2em 0 .2em
 }
 
 .healthcare-news > h3 {
-  margin-top: 25px;
   font-family: 'Bebas Neue', cursive;
   font-family: 'IBM Plex Serif', serif;
 }
@@ -189,9 +234,9 @@
 .covid-news {
   display: flex;
   flex-direction: column;
-  background: #C9CCD3;
+  /* background: #C9CCD3;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
-  background-blend-mode: lighten; 
+  background-blend-mode: lighten;  */
 }
 
 .global-container {
@@ -200,7 +245,10 @@
   height: 100%;
   align-self: center;
   border: solid;
-  border-radius: 15px;
+  border-radius: 1em;
+  margin:0 13em 0 13em;
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen; 
 }
 
 
@@ -212,9 +260,10 @@
   align-self: center;
   justify-content: center;
   border: solid;
-  border-radius: 15px;
-  margin-left: 150px;
-  margin-right: 150px;
+  border-radius: 1em;
+  margin:0 13em 5em 13em;
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen; 
 }
 
 
@@ -232,8 +281,9 @@
   padding: 10px
 }
 
-.homepage {
-  background: #C9CCD3;
-  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
-  background-blend-mode: lighten; 
+.userScript {
+  margin: .5em 0 .5em 0
+}
+.userScript > button {
+  margin:  0 0  0 .5em
 }

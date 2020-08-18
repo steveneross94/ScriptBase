@@ -17,24 +17,26 @@ function MyScripts() {
     let searchableBrandNames = brandNames ? brandNames.filter(brandName => brandName.name.toLowerCase().includes(search.toLowerCase())) : null
 
     return (
-        <div className='scripts container'>
-            <div className='scripts library'>
-                <h1>MyScripts</h1>
-                <MyScript />
-            </div>
-            <div className='scripts library'>
-                <h1>Prescription Library</h1>
-                <Form>
-                    <Form.Control placeholder='Search Prescriptions By Name' value={search} onChange={(e) => setSearch(e.target.value)} />
-                </Form>
-                <div className='allScripts'>
-                    {searchableBrandNames ? searchableBrandNames.map(brandName =>
-                        <BrandName brand={brandName} key={brandName.id} />)
-                        :
-                        <Spinner animation="border" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </Spinner>}
+        <div className='scripts-page'>
+            <div className='scripts container'>
+                <div className='scripts library'>
+                    <h1>MyScripts</h1>
+                    <MyScript />
+                </div>
+                <div className='scripts library'>
+                    <h1>Prescription Library</h1>
+                    <Form className='search-bar'>
+                        <Form.Control placeholder='Search Prescriptions By Name' value={search} onChange={(e) => setSearch(e.target.value)} />
+                    </Form>
+                    <div className='allScripts'>
+                        {searchableBrandNames ? searchableBrandNames.map(brandName =>
+                            <BrandName brand={brandName} key={brandName.id} />)
+                            :
+                            <Spinner animation="border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </Spinner>}
 
+                    </div>
                 </div>
             </div>
         </div>
