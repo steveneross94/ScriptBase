@@ -11,7 +11,6 @@ function Term({ terms }) {
     }
 
 
-    // terms[Math.floor(Math.random() * terms.length)]
     return (
         <div>
             <Button variant='dark' onClick={() => setShowTerm(!showTerm)}>{showTerm ? 'Enough Learning, Thanks' : 'Learn Something'}</Button>

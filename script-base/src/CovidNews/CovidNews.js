@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Chart from './Chart'
 import SelectedCountryChart from './SelectedCountryChart'
-import { Form } from 'react-bootstrap'
-// import Card from 'react-bootstrap/Card'
-// import Col from 'react-bootstrap/Col'
-// import Row from 'react-bootstrap/Row'
-// import Container from 'react-bootstrap/Container'
+
+
 
 function CovidNews() {
 

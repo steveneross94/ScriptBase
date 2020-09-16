@@ -28,7 +28,7 @@ First, start the rails API:
 Next, follow these steps before running npm start
 1. `cd ScriptBase/script-base` 
 2. `json-server -w db.json -p 3002`
-  - The Covid Data was pulling from an API originally, but the source proved to be finicky and in order to circument that issue,I elected to spin up a db.json to prevent SSL errors or server timeouts. 
+  - The Covid Data was pulling from an API originally, but the source proved to be finicky and in order to circumvent that issue,I elected to spin up a db.json to prevent SSL errors or server timeouts. 
 3. `npm start`
   - you will be asked if you want to start on a different port, select yes
 
