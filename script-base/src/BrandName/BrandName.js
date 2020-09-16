@@ -8,6 +8,7 @@ function BrandName({ brand }) {
 
     let [isGeneric, setIsGeneric] = useState(false)
     let [isAlternative, setIsAlternative] = useState(false)
+    let [showSideEffects, setShowSideEffects] = useState(false)
 
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -39,6 +40,8 @@ function BrandName({ brand }) {
                         <Button variant='dark' disabled={!brand.generic_option} onClick={() => setIsGeneric(!isGeneric)}>Generic Option</Button>
                         <Button variant='dark' disabled={!brand.alternative_option} onClick={() => setIsAlternative(!isAlternative)}>Alternative Option</Button>
                         <Button variant='dark' disabled={myScript} onClick={() => addToMyScripts(brand)}>Add to MyScripts</Button>
+                        <Button variant='dark' onClick={() => setShowSideEffects(!showSideEffects)}>Show Side Effects</Button>
+
                     </ButtonGroup>
                 </div>
                 {isGeneric &&
@@ -67,6 +70,15 @@ function BrandName({ brand }) {
                                 </div>
                             </div>
                         )}
+                    </div>
+                }
+                {showSideEffects && 
+                    <div>
+                        {brand.side_effects.split(';').map(sideEffect => 
+                            <ul>
+                                <li>{sideEffect}</li>
+                            </ul>
+                            )}
                     </div>
                 }
             </Col>
